@@ -1,0 +1,43 @@
+package practice8;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayHas5 {
+    public static void main(String[] args) {
+        /**
+         * Given an array of integers.
+         * Print true if the array contains a 5 next to a 5
+         * else print false
+         *
+         * EX:
+         *
+         * Enter numbers:
+         * numbers -> [1, 5, 5, 1, 2]
+         * Has consecutive 5th: true
+         *
+         * EX2:
+         * Enter numbers:
+         * numbers -> [1, 5, 3, 1, 5]
+         * Has consecutive 5th: false
+         */
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numbers:");
+        int[] numbers = {scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt()};
+        System.out.println("Numbers -> " + Arrays.toString(numbers));
+        System.out.println("Has consecutive 5th: " + check(numbers));
+        //TODO WRITE YOUR CODE HERE
+
+    }
+
+    public static boolean check(int[] numbers) {
+        //TODO IMPLEMENT THIS METHOD
+       for (int i = 0; i < numbers.length; i++){
+       if (numbers[i] == 5 && numbers[i + 1] == 5){
+           return true;
+       }
+       }
+        return check(numbers);
+    }
+}
